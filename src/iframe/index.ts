@@ -24,6 +24,9 @@ const onInit = async () => {
     // },
     getParentApiVersion() {
       return 'parent@1.0'
+    },
+    onReady(status: boolean, message: string) {
+      console.log('onReady()', status, message);
     }
   };
 

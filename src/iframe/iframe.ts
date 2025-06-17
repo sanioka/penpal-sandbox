@@ -27,7 +27,7 @@ const onInit = async () => {
     // },
     getChildApiVersion() {
       return 'asqes-child@1.0'
-    }
+    },
   };
 
   const connection = connect<ParentMethods>({
@@ -39,6 +39,11 @@ const onInit = async () => {
 
   const remote = await connection.promise;
   console.log('AAA child.onInit @end ✅', ',remote=', await remote.getParentApiVersion());
+
+  // Proof of work here
+
+  // exit
+  await remote.onReady(true, 'Успех');
 
   // const additionResult = await remote.add(2, 6);
   // console.log(additionResult); // 8

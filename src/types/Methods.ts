@@ -7,4 +7,5 @@ export type ChildMethods = {
 export type ParentMethods = {
   add?: (num1: number, num2: number) => number;
   getParentApiVersion: () => string;
+  onReady: (status: boolean, message: string) => void;
 };
