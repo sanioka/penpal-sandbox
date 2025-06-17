@@ -26,7 +26,7 @@ const onInit = async () => {
       return 'parent@1.0'
     },
     onReady(status: boolean, message: string) {
-      console.log('onReady()', status, message);
+      console.log('onReady(', status, message, ')');
     }
   };
 
@@ -38,7 +38,7 @@ const onInit = async () => {
   });
 
   const remote = await connection.promise;
-  console.log('AAA parent.onInit @end ✅', ',remote=', await remote.getChildApiVersion());
+  console.log('✅ parent.SYNCED', ',remote=', await remote.getChildApiVersion());
 
   // Calling a remote method will always return a promise.
   // const multiplicationResult = await remote.multiply(2, 6);

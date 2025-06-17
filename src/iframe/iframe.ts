@@ -38,12 +38,14 @@ const onInit = async () => {
   });
 
   const remote = await connection.promise;
-  console.log('AAA child.onInit @end ✅', ',remote=', await remote.getParentApiVersion());
+  console.log('✅ child.SYNCED', ',remote=', await remote.getParentApiVersion());
 
-  // Proof of work here
+  // Some proof of work here
 
-  // exit
-  await remote.onReady(true, 'Успех');
+  setTimeout(async () => {
+    // exit point
+    await remote.onReady(true, 'Успех');
+  }, 2000);
 
   // const additionResult = await remote.add(2, 6);
   // console.log(additionResult); // 8
